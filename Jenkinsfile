@@ -50,7 +50,7 @@ stage('Deploy') {
 		beforeInput true
 	}
 	input{
-		massage 'Deploy the application?'
+		message 'Deploy the application?'
 	}
 	steps {
 		echo 'Deploying...'
