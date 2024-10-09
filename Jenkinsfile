@@ -45,17 +45,16 @@ stage('Frontend Tests') {
 
 stage('Deploy') {
 
-when {
-
-expression { env.GIT_BRANCH == 'origin/main' }
-
-}
-
-steps {
-
-echo 'Deploying...'
-
-}
+	when {
+		expression { env.GIT_BRANCH == 'origin/main' }
+		beforeInput true
+	}
+	input{
+		massage 'Deploy the application?'
+	}
+	steps {
+		echo 'Deploying...'
+	}
 
 }
 
